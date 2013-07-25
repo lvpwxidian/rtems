@@ -421,7 +421,11 @@ void _CPU_Context_restore(
 				 "i" (s15_OFFSET), "i" (r1_OFFSET), "i" (r3_OFFSET));
 				 
 	 /* Return from the function */
+	 /* Note: this could be omitted */
 	 asm volatile("ret $r30, $r31 \n\t"
+		      "nop \n\t"
+		      "nop \n\t"
+		      "nop \n\t"
 				 : : );
 
 }							 
